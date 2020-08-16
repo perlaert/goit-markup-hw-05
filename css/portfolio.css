@@ -26,6 +26,8 @@
     color: var(--primary-title-color);
     background-color: #f5f4fa;
     cursor: pointer;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn:hover,
@@ -58,11 +60,18 @@ img {
 
 .portfolio-projects {
     width: 370px;
+
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-projects:hover,
 .portfolio-projects:focus {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.projects-thumb {
+    position: relative;
+    overflow: hidden;
 }
 
 .portfolio-projects-desc {
@@ -96,4 +105,27 @@ img {
     font-size: 16px;
     line-height: 1.875;
     color: var(--primary-text-color);
+}
+
+.portfolio-projects .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateY(100%);
+
+    padding: 63px 24px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.556;
+    color: var(--white-color);
+    background: rgba(33, 150, 243, 0.9);
+
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-projects:hover .overlay,
+.portfolio-projects:focus .overlay {
+    transform: translateY(0);
 }
